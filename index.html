@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#145c3a">
+<meta name="description" content="Aplikasi pencatatan jimpitan RT">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <title>Jimpitan RT</title>
 <style>
 :root{--bg:#f4f6f8;--card:#fff;--ink:#17212b;--muted:#64748b;--line:#e2e8f0;--green:#16794b;--greenbg:#e8f5ee;--red:#b42318}
@@ -305,6 +310,7 @@ document.getElementById('logoutBtn').addEventListener('click',async()=>{
  await supabaseClient.auth.signOut();showLogin();
 });
 startApp();
+if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(err => console.warn('Service worker gagal:', err))); }
 </script>
 </body>
 </html>
