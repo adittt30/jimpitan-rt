@@ -36,7 +36,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-<header><h1>Jimpitan RT 02 RW 07 Plawikan</h1><p>Jadwal petugas, pencatatan setoran, dan laporan bulanan</p></header>
+<header><h1>Jimpitan RT 02 RW 07 Plawikan</h1></header>
 <main>
 <section id="loginPanel" class="card" style="max-width:440px;margin:30px auto;display:none">
 <h2>Masuk Pengurus</h2>
@@ -74,7 +74,6 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 <form id="residentForm">
 <div class="row"><div><label>Nama warga / kepala keluarga</label><input id="residentName" placeholder="Contoh: Pak Budi" required></div><div><label>Tanggal tugas tetap (1–31)</label><input id="residentDay" type="number" min="1" max="31" placeholder="Contoh: 1" required></div><button class="primary" type="submit" style="flex:0 0 auto">Tambah</button></div>
 </form>
-<p class="hint">Setiap tanggal hanya boleh dimiliki satu warga. Tanggal tugas akan berulang setiap bulan; jika bulan tersebut tidak memiliki tanggalnya (misalnya tanggal 31 pada bulan 30 hari), tugas bulan itu dilewati.</p>
 </div>
 <div class="card"><h2>Daftar warga</h2><div id="residentTable" class="tablewrap"></div></div>
 </section>
@@ -83,7 +82,6 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 <div class="card">
 <h2>Jadwal petugas</h2>
 <div class="row"><div><label>Bulan jadwal</label><input class="month" id="scheduleMonth" type="month"></div><div style="align-self:end"><button class="primary" id="generate">Buat / perbarui jadwal</button></div></div>
-<p class="hint">Jadwal mengikuti daftar resmi RT 02/RW 07. Tanggal 27 dan 29 tidak ada petugas. Ibu Siti bertugas pada tanggal 30 dan 31. Jadwal yang sudah memiliki catatan setoran tidak akan ditimpa saat diperbarui.</p>
 </div>
 <div class="card"><div id="scheduleTable" class="tablewrap"></div></div>
 </section>
@@ -94,8 +92,6 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
   <label>Pilih bulan</label><input class="month" id="pendingMonth" type="month">
   <div class="stats" style="margin-top:14px">
    <div class="stat"><small>Jadwal sudah lewat, belum setor</small><strong id="pendingCount">0</strong></div>
-  </div>
-  <p class="hint">Hanya jadwal sebelum hari ini yang ditampilkan. Jadwal hari ini dan tanggal mendatang tidak dihitung terlambat. Nama otomatis hilang dari daftar setelah setoran dikonfirmasi.</p>
  </div>
  <div class="card"><h2>Rincian warga</h2><div id="pendingTable" class="tablewrap"></div></div>
 </section>
